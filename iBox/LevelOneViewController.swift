@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LevelOneViewController.swift
 //  iBox
 //
 //  Created by ALEKSANDER ONISZCZAK on 2019-07-20.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UITextView {
-    
+//extension UITextView {
+//    
 //    func addDoneButton() {
 //        let keyboardToolbar = UIToolbar()
 //        keyboardToolbar.sizeToFit()
@@ -20,9 +20,17 @@ extension UITextView {
 //        keyboardToolbar.items = [flexBarButton, doneBarButton]
 //        self.inputAccessoryView = keyboardToolbar
 //    }
+//}
+
+extension String {
+    var isDigits: Bool {
+        guard !self.isEmpty else { return false }
+        return !self.contains { Int(String($0)) == nil }
+    }
 }
 
-class ViewController: UIViewController, UITextFieldDelegate{
+
+class LevelOneViewController: UIViewController, UITextFieldDelegate{
 
     let number = Int.random(in: 1 ..< 10)
     
@@ -46,8 +54,10 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("The secret number is:")
-        print (number)
+        print ("The secret number is: \(number)")
+        //print (number)
+        
+        //questionBox.keyboardType = .numberPad
         
         self.questionBox.delegate = self
         
@@ -75,34 +85,39 @@ class ViewController: UIViewController, UITextFieldDelegate{
             performSegue(withIdentifier: "goToLevel2", sender: nil)
         }
         
-        var guessedNumber = Int(questionBox.text!)
+        guard var guessedNumberAsText = questionBox.text, !guessedNumberAsText.isEmpty else {
+            answerBox.text = "It looked like you were about to say something..."
+            return
+        }
+        
+        if !guessedNumberAsText.isDigits {
+            answerBox.text = guessedNumberAsText + " is not a number silly."
+            questionBox.text = ""
+            return
+        }
+        
+        var guessedNumber = Int(guessedNumberAsText)
+        //var guessedNumber = Int(questionBox.text!)
         
         if String(number) == questionBox.text  {
             print ("YES!")
             answerBox.text = "YES!"
             
-            //for index in 1...5 {
+            if let wnd = self.view{
+                
+                var v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.green
+                v.alpha = 1
+                
+                wnd.addSubview(v)
+                UIView.animate(withDuration: 2, animations: {
+                    v.alpha = 0.0
+                }, completion: {(finished:Bool) in
+                    print("inside")
+                    v.removeFromSuperview()
+                })
+            }
             
-                if let wnd = self.view{
-                    
-                    var v = UIView(frame: wnd.bounds)
-                    v.backgroundColor = UIColor.green
-                    v.alpha = 1
-                    
-                    wnd.addSubview(v)
-                    UIView.animate(withDuration: 2, animations: {
-                        v.alpha = 0.0
-                    }, completion: {(finished:Bool) in
-                        print("inside")
-                        v.removeFromSuperview()
-                    })
-                }
-                
-               
-                
-            //print (index)
-            //}
-           
             let seconds = 4.0
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 // Put your code which should be executed with a delay here
@@ -113,6 +128,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         else {
             print ("Nope!")
             answerBox.text = "Nope! It's not " + questionBox.text!
+            questionBox.text = ""
             
             if guessedNumber! < number {
                 answerBox.text = answerBox.text! + ". It's Higher."
