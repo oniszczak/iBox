@@ -24,8 +24,12 @@ extension UITextView {
 
 class ViewController: UIViewController, UITextFieldDelegate{
 
+    let number = Int.random(in: 1 ..< 10)
+    
     @IBOutlet weak var questionBox: UITextField!
     @IBOutlet weak var titleBox: UITextView!
+    @IBOutlet weak var answerBox: UITextField!
+    @IBOutlet weak var theButton: UIButton!
     
     @IBAction func pinkButton(_ sender: Any) {
         titleBox.textColor = UIColor.red
@@ -39,10 +43,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
         titleBox.textColor = UIColor.blue
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print ("The secret number is:")
+        print (number)
         
         self.questionBox.delegate = self
         
@@ -62,5 +67,82 @@ class ViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
         return false
     }
+    
+    
+    @IBAction func donePressed(_ sender: Any) {
+       
+        if theButton.titleLabel!.text != "Done" {
+            performSegue(withIdentifier: "goToLevel2", sender: nil)
+        }
+        
+        var guessedNumber = Int(questionBox.text!)
+        
+        if String(number) == questionBox.text  {
+            print ("YES!")
+            answerBox.text = "YES!"
+            
+            //for index in 1...5 {
+            
+                if let wnd = self.view{
+                    
+                    var v = UIView(frame: wnd.bounds)
+                    v.backgroundColor = UIColor.green
+                    v.alpha = 1
+                    
+                    wnd.addSubview(v)
+                    UIView.animate(withDuration: 2, animations: {
+                        v.alpha = 0.0
+                    }, completion: {(finished:Bool) in
+                        print("inside")
+                        v.removeFromSuperview()
+                    })
+                }
+                
+               
+                
+            //print (index)
+            //}
+           
+            let seconds = 4.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                // Put your code which should be executed with a delay here
+            }
+            
+            theButton.setTitle("Go To Next Level!", for: .normal)
+        }
+        else {
+            print ("Nope!")
+            answerBox.text = "Nope! It's not " + questionBox.text!
+            
+            if guessedNumber! < number {
+                answerBox.text = answerBox.text! + ". It's Higher."
+            }
+            else {
+                answerBox.text = answerBox.text! + ". It's Lower."
+            }
+            
+            if let wnd = self.view{
+                
+                var v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.red
+                v.alpha = 1
+                
+                wnd.addSubview(v)
+                UIView.animate(withDuration: 1, animations: {
+                    v.alpha = 0.0
+                }, completion: {(finished:Bool) in
+                    print("inside")
+                    v.removeFromSuperview()
+                })
+            }
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
 }
 
