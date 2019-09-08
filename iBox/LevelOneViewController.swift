@@ -9,7 +9,7 @@
 import UIKit
 
 //extension UITextView {
-//    
+//
 //    func addDoneButton() {
 //        let keyboardToolbar = UIToolbar()
 //        keyboardToolbar.sizeToFit()
@@ -82,7 +82,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
     @IBAction func donePressed(_ sender: Any) {
        
         if theButton.titleLabel!.text != "Done" {
-            performSegue(withIdentifier: "goToLevel2", sender: nil)
+            performSegue(withIdentifier: "goToLevel2TitlePage", sender: nil)
         }
         
         guard var guessedNumberAsText = questionBox.text, !guessedNumberAsText.isEmpty else {
