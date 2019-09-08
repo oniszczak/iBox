@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LevelOneTitlePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let seconds = 1.0
+        
+        let seconds = 1.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
             self.performSegue(withIdentifier: "goToLevel1", sender: nil)
         }
         

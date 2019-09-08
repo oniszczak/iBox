@@ -103,6 +103,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             print ("YES!")
             answerBox.text = "YES!"
             
+            // Flash Screen Green
             if let wnd = self.view{
                 
                 var v = UIView(frame: wnd.bounds)
@@ -131,12 +132,13 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             questionBox.text = ""
             
             if guessedNumber! < number {
-                answerBox.text = answerBox.text! + ". It's Higher."
+                answerBox.text = answerBox.text! + ". Try a HIGHER number."
             }
             else {
-                answerBox.text = answerBox.text! + ". It's Lower."
+                answerBox.text = answerBox.text! + ". Try a LOWER number."
             }
             
+            // Flash Screen Red
             if let wnd = self.view{
                 
                 var v = UIView(frame: wnd.bounds)

@@ -15,7 +15,7 @@ class LevelTwoTitlePageViewController: UIViewController {
 
         let seconds = 1.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.performSegue(withIdentifier: "goToLevel1", sender: nil)
+            self.performSegue(withIdentifier: "goToLevel2", sender: nil)
         }
         
     }

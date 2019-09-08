@@ -65,13 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				5579699E22E3A45E00CD4EC4 /* AppDelegate.swift */,
-				557969A022E3A45E00CD4EC4 /* LevelOneViewController.swift */,
 				557969A222E3A45E00CD4EC4 /* Main.storyboard */,
-				55BBEF05232568F900CDDE1A /* LevelThreeViewController.swift */,
-				55BBEF03232568D800CDDE1A /* LevelThreeTitlePageViewController.swift */,
-				55BBEF012325681500CDDE1A /* LevelTwoTitlePageViewController.swift */,
 				55BBEEFF2325679200CDDE1A /* LevelOneTitlePageViewController.swift */,
+				557969A022E3A45E00CD4EC4 /* LevelOneViewController.swift */,
+				55BBEF012325681500CDDE1A /* LevelTwoTitlePageViewController.swift */,
 				557346CC2320A9DC00870D48 /* LevelTwoViewController.swift */,
+				55BBEF03232568D800CDDE1A /* LevelThreeTitlePageViewController.swift */,
+				55BBEF05232568F900CDDE1A /* LevelThreeViewController.swift */,
 				557969A522E3A46000CD4EC4 /* Assets.xcassets */,
 				557969A722E3A46000CD4EC4 /* LaunchScreen.storyboard */,
 				557969AA22E3A46000CD4EC4 /* Info.plist */,
