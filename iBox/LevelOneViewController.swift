@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //extension UITextView {
 //
@@ -32,6 +33,8 @@ extension String {
 
 class LevelOneViewController: UIViewController, UITextFieldDelegate{
 
+    var bombSoundEffect: AVAudioPlayer?
+    
     let number = Int.random(in: 1 ..< 10)
     
     @IBOutlet weak var questionBox: UITextField!
@@ -81,15 +84,13 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func donePressed(_ sender: Any) {
        
-        if theButton.titleLabel!.text != "Done" {
-            performSegue(withIdentifier: "goToLevel2TitlePage", sender: nil)
-        }
-        
+        // Check if nothing was entered
         guard var guessedNumberAsText = questionBox.text, !guessedNumberAsText.isEmpty else {
             answerBox.text = "It looked like you were about to say something..."
             return
         }
         
+        // Check if guess is a number
         if !guessedNumberAsText.isDigits {
             answerBox.text = guessedNumberAsText + " is not a number silly."
             questionBox.text = ""
@@ -97,8 +98,26 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         }
         
         var guessedNumber = Int(guessedNumberAsText)
-        //var guessedNumber = Int(questionBox.text!)
         
+        // Go to Next Level
+        if theButton.titleLabel!.text != "Done" {
+            performSegue(withIdentifier: "goToLevel2TitlePage", sender: nil)
+        }
+        // Stay in the game and play sound
+        else {
+            // Play sound
+            let path = Bundle.main.path(forResource: guessedNumberAsText+".mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                bombSoundEffect = try AVAudioPlayer(contentsOf: url)
+                bombSoundEffect?.play()
+            } catch {
+                // couldn't load file :(
+            }
+        }
+        
+        // Correct Answer!
         if String(number) == questionBox.text  {
             print ("YES!")
             answerBox.text = "YES!"
@@ -126,6 +145,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             
             theButton.setTitle("Go To Next Level!", for: .normal)
         }
+        // Wrong Guess
         else {
             print ("Nope!")
             answerBox.text = "Nope! It's not " + questionBox.text!
@@ -153,14 +173,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
                     v.removeFromSuperview()
                 })
             }
-            
-            
-            
         }
-        
     }
-    
-    
-    
 }
 
