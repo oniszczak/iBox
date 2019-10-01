@@ -43,15 +43,15 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var theButton: UIButton!
     
     @IBAction func pinkButton(_ sender: Any) {
-        titleBox.textColor = UIColor.red
+        titleBox.textColor = UIColor.systemRed
     }
     
     @IBAction func purpleButton(_ sender: Any) {
-        titleBox.textColor = UIColor.purple
+        titleBox.textColor = UIColor.systemPurple
     }
     
     @IBAction func blueButton(_ sender: Any) {
-        titleBox.textColor = UIColor.blue
+        titleBox.textColor = UIColor.systemBlue
     }
     
     override func viewDidLoad() {
@@ -126,7 +126,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             if let wnd = self.view{
                 
                 var v = UIView(frame: wnd.bounds)
-                v.backgroundColor = UIColor.green
+                v.backgroundColor = UIColor.systemGreen
                 v.alpha = 1
                 
                 wnd.addSubview(v)
