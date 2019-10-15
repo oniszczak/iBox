@@ -9,20 +9,6 @@
 import UIKit
 import AVFoundation
 
-//extension UITextView {
-//
-//    func addDoneButton() {
-//        let keyboardToolbar = UIToolbar()
-//        keyboardToolbar.sizeToFit()
-//        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-//                                            target: nil, action: nil)
-//        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-//                                            target: self, action: #selector(UIView.endEditing(_:)))
-//        keyboardToolbar.items = [flexBarButton, doneBarButton]
-//        self.inputAccessoryView = keyboardToolbar
-//    }
-//}
-
 extension String {
     var isDigits: Bool {
         guard !self.isEmpty else { return false }
@@ -59,8 +45,6 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         
         print ("The secret number is: \(number)")
         //print (number)
-        
-        //questionBox.keyboardType = .numberPad
         
         self.questionBox.delegate = self
         

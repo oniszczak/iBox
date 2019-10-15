@@ -7,24 +7,144 @@
 //
 
 import UIKit
+import AVFoundation
 
-class LevelTwoViewController: UIViewController {
-
+class LevelTwoViewController: UIViewController, UITextFieldDelegate {
+    
+    var bombSoundEffect: AVAudioPlayer?
+    let number = Int.random(in: 1 ..< 50)
+    
+    @IBOutlet weak var theButton: UIButton!
+    @IBOutlet weak var questionBox: UITextField!
+    @IBOutlet weak var answerBox: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print ("The secret number is: \(number)")
+        
+        self.questionBox.delegate = self
+        
+        let bar = UIToolbar()
+        let reset = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+        bar.items = [reset]
+        bar.sizeToFit()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func handleDone(sender:UIButton) {
+        //self.titleBox.resignFirstResponder()
     }
-    */
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    @IBAction func pinkButtonPressed(_ sender: Any) {
+        self.view.backgroundColor = UIColor.systemPink
+    }
+    
+    @IBAction func indigoButoonPressed(_ sender: Any) {
+        self.view.backgroundColor = UIColor.systemGreen
+    }
+    
+    @IBAction func orangeButtonPressed(_ sender: Any) {
+        self.view.backgroundColor = UIColor.systemOrange
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        // Check if nothing was entered
+        guard var guessedNumberAsText = questionBox.text, !guessedNumberAsText.isEmpty else {
+            answerBox.text = "It looked like you were about to say something..."
+            return
+        }
+        
+        // Check if guess is a number
+        if !guessedNumberAsText.isDigits {
+            answerBox.text = guessedNumberAsText + " is not a number silly."
+            questionBox.text = ""
+            return
+        }
+        
+        var guessedNumber = Int(guessedNumberAsText)
+        
+        // Go to Next Level
+        if theButton.titleLabel!.text != "Done" {
+            performSegue(withIdentifier: "goToLevel3TitlePage", sender: nil)
+        }
+        // Stay in the game and play sound
+        else {
+            // Play sound
+//            let path = Bundle.main.path(forResource: guessedNumberAsText+".mp3", ofType:nil)!
+//            let url = URL(fileURLWithPath: path)
+//            
+//            do {
+//                bombSoundEffect = try AVAudioPlayer(contentsOf: url)
+//                bombSoundEffect?.play()
+//            } catch {
+//                // couldn't load file :(
+//            }
+        }
+        
+        // Correct Answer!
+        if String(number) == questionBox.text  {
+            print ("YES!")
+            answerBox.text = "YES!"
+            
+            // Flash Screen Green
+            if let wnd = self.view{
+                
+                var v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.systemGreen
+                v.alpha = 1
+                
+                wnd.addSubview(v)
+                UIView.animate(withDuration: 2, animations: {
+                    v.alpha = 0.0
+                }, completion: {(finished:Bool) in
+                    
+                    v.removeFromSuperview()
+                })
+            }
+            
+            let seconds = 4.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                // Put your code which should be executed with a delay here
+            }
+            
+            theButton.setTitle("Go To Next Level!", for: .normal)
+        }
+        // Wrong Guess
+        else {
+            print ("Nope!")
+            answerBox.text = "Nope! It's not " + questionBox.text!
+            questionBox.text = ""
+            
+            if guessedNumber! < number {
+                answerBox.text = answerBox.text! + ". Try a HIGHER number."
+            }
+            else {
+                answerBox.text = answerBox.text! + ". Try a LOWER number."
+            }
+            
+            // Flash Screen Red
+            if let wnd = self.view{
+                
+                var v = UIView(frame: wnd.bounds)
+                v.backgroundColor = UIColor.red
+                v.alpha = 1
+                
+                wnd.addSubview(v)
+                UIView.animate(withDuration: 1, animations: {
+                    v.alpha = 0.0
+                }, completion: {(finished:Bool) in
+                    
+                    v.removeFromSuperview()
+                })
+            }
+        }
+    }
+    
 }
