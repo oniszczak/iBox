@@ -31,6 +31,8 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
         bar.items = [reset]
         bar.sizeToFit()
         
+        questionBox.layer.borderWidth = 1
+        questionBox.layer.borderColor = UIColor.systemOrange.cgColor
     }
     
     @objc func handleDone(sender:UIButton) {

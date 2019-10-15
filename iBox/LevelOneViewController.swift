@@ -54,6 +54,9 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         bar.sizeToFit()
         titleBox.inputAccessoryView = bar
 
+        questionBox.layer.borderWidth = 1
+        questionBox.layer.borderColor = UIColor.systemOrange.cgColor
+        
     }
 
     @objc func handleDone(sender:UIButton) {
