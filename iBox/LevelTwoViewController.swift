@@ -79,6 +79,14 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
         // Stay in the game and play sound
         else {
             // Play sound
+            
+            let utterance = AVSpeechUtterance(string: guessedNumberAsText)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.rate = 0.1
+
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
+            
 //            let path = Bundle.main.path(forResource: guessedNumberAsText+".mp3", ofType:nil)!
 //            let url = URL(fileURLWithPath: path)
 //            
