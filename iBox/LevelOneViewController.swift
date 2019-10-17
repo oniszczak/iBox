@@ -91,7 +91,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             performSegue(withIdentifier: "goToLevel2TitlePage", sender: nil)
         }
         // Stay in the game and play sound
-        else {
+        else if String(number) != questionBox.text {
             // Play sound
             let path = Bundle.main.path(forResource: guessedNumberAsText+".mp3", ofType:nil)!
             let url = URL(fileURLWithPath: path)
@@ -105,9 +105,16 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         }
         
         // Correct Answer!
-        if String(number) == questionBox.text  {
+        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Done" {
             print ("YES!")
             answerBox.text = "YES!"
+            
+            let utterance = AVSpeechUtterance(string: questionBox.text! + "is correct. Yaaaaaaaaaaaay! You got it! You may now advance to level two.")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.rate = 0.1
+
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
             
             // Flash Screen Green
             if let wnd = self.view{

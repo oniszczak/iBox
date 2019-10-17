@@ -60,12 +60,24 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
         // Check if nothing was entered
         guard var guessedNumberAsText = questionBox.text, !guessedNumberAsText.isEmpty else {
             answerBox.text = "It looked like you were about to say something..."
+            let utterance = AVSpeechUtterance(string: answerBox.text!)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.rate = 0.1
+
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
             return
         }
         
         // Check if guess is a number
         if !guessedNumberAsText.isDigits {
             answerBox.text = guessedNumberAsText + " is not a number silly."
+            let utterance = AVSpeechUtterance(string: answerBox.text!)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.rate = 0.1
+
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
             questionBox.text = ""
             return
         }
@@ -79,29 +91,25 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
         // Stay in the game and play sound
         else {
             // Play sound
+//            let utterance = AVSpeechUtterance(string: guessedNumberAsText)
+//            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+//            utterance.rate = 0.1
+//
+//            let synthesizer = AVSpeechSynthesizer()
+//            synthesizer.speak(utterance)
+        }
+        
+        // Correct Answer!
+        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Done" {
+            print ("YES!")
+            answerBox.text = "YES!"
             
-            let utterance = AVSpeechUtterance(string: guessedNumberAsText)
+            let utterance = AVSpeechUtterance(string: "You win! Good for you. Advance to the next level.")
             utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
             utterance.rate = 0.1
 
             let synthesizer = AVSpeechSynthesizer()
             synthesizer.speak(utterance)
-            
-//            let path = Bundle.main.path(forResource: guessedNumberAsText+".mp3", ofType:nil)!
-//            let url = URL(fileURLWithPath: path)
-//            
-//            do {
-//                bombSoundEffect = try AVAudioPlayer(contentsOf: url)
-//                bombSoundEffect?.play()
-//            } catch {
-//                // couldn't load file :(
-//            }
-        }
-        
-        // Correct Answer!
-        if String(number) == questionBox.text  {
-            print ("YES!")
-            answerBox.text = "YES!"
             
             // Flash Screen Green
             if let wnd = self.view{
@@ -134,9 +142,21 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
             
             if guessedNumber! < number {
                 answerBox.text = answerBox.text! + ". Try a HIGHER number."
+                let utterance = AVSpeechUtterance(string: answerBox.text!)
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                utterance.rate = 0.1
+
+                let synthesizer = AVSpeechSynthesizer()
+                synthesizer.speak(utterance)
             }
             else {
                 answerBox.text = answerBox.text! + ". Try a LOWER number."
+                let utterance = AVSpeechUtterance(string: answerBox.text!)
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                utterance.rate = 0.1
+
+                let synthesizer = AVSpeechSynthesizer()
+                synthesizer.speak(utterance)
             }
             
             // Flash Screen Red
