@@ -13,6 +13,15 @@
 		557969A422E3A45E00CD4EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557969A222E3A45E00CD4EC4 /* Main.storyboard */; };
 		557969A622E3A46000CD4EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557969A522E3A46000CD4EC4 /* Assets.xcassets */; };
 		557969A922E3A46000CD4EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557969A722E3A46000CD4EC4 /* LaunchScreen.storyboard */; };
+		55A0FDE0235EB70A00B78B0C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A0FDDE235EB70A00B78B0C /* Interface.storyboard */; };
+		55A0FDE2235EB70D00B78B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A0FDE1235EB70D00B78B0C /* Assets.xcassets */; };
+		55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55A0FDEE235EB70E00B78B0C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDED235EB70E00B78B0C /* InterfaceController.swift */; };
+		55A0FDF0235EB70E00B78B0C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDEF235EB70E00B78B0C /* ExtensionDelegate.swift */; };
+		55A0FDF2235EB70E00B78B0C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDF1235EB70E00B78B0C /* NotificationController.swift */; };
+		55A0FDF4235EB70E00B78B0C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDF3235EB70E00B78B0C /* ComplicationController.swift */; };
+		55A0FDF6235EB70E00B78B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A0FDF5235EB70E00B78B0C /* Assets.xcassets */; };
+		55A0FDFB235EB70F00B78B0C /* iBox Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 55A0FDDC235EB70900B78B0C /* iBox Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55BBEF002325679200CDDE1A /* LevelOneTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBEEFF2325679200CDDE1A /* LevelOneTitlePageViewController.swift */; };
 		55BBEF022325681500CDDE1A /* LevelTwoTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBEF012325681500CDDE1A /* LevelTwoTitlePageViewController.swift */; };
 		55BBEF04232568D800CDDE1A /* LevelThreeTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBEF03232568D800CDDE1A /* LevelThreeTitlePageViewController.swift */; };
@@ -29,6 +38,48 @@
 		55BBEF1A2325EB6F00CDDE1A /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55BBEF112325EB6F00CDDE1A /* 9.mp3 */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		55A0FDEA235EB70E00B78B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5579699322E3A45E00CD4EC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A0FDE7235EB70E00B78B0C;
+			remoteInfo = "iBox Watch Extension";
+		};
+		55A0FDF9235EB70F00B78B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5579699322E3A45E00CD4EC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A0FDDB235EB70900B78B0C;
+			remoteInfo = "iBox Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55A0FDFC235EB70F00B78B0C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				55A0FDFB235EB70F00B78B0C /* iBox Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A0FDFF235EB70F00B78B0C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		557346CC2320A9DC00870D48 /* LevelTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoViewController.swift; sourceTree = "<group>"; };
 		5579699B22E3A45E00CD4EC4 /* iBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +89,18 @@
 		557969A522E3A46000CD4EC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		557969A822E3A46000CD4EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		557969AA22E3A46000CD4EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A0FDDC235EB70900B78B0C /* iBox Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iBox Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A0FDDF235EB70A00B78B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		55A0FDE1235EB70D00B78B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55A0FDE3235EB70D00B78B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iBox Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A0FDED235EB70E00B78B0C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		55A0FDEF235EB70E00B78B0C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		55A0FDF1235EB70E00B78B0C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		55A0FDF3235EB70E00B78B0C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		55A0FDF5235EB70E00B78B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55A0FDF7235EB70E00B78B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A0FDF8235EB70E00B78B0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		55BBEEFF2325679200CDDE1A /* LevelOneTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTitlePageViewController.swift; sourceTree = "<group>"; };
 		55BBEF012325681500CDDE1A /* LevelTwoTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoTitlePageViewController.swift; sourceTree = "<group>"; };
 		55BBEF03232568D800CDDE1A /* LevelThreeTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeTitlePageViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +125,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55A0FDE5235EB70E00B78B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				5579699D22E3A45E00CD4EC4 /* iBox */,
+				55A0FDDD235EB70900B78B0C /* iBox Watch */,
+				55A0FDEC235EB70E00B78B0C /* iBox Watch Extension */,
 				5579699C22E3A45E00CD4EC4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				5579699B22E3A45E00CD4EC4 /* iBox.app */,
+				55A0FDDC235EB70900B78B0C /* iBox Watch.app */,
+				55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +183,30 @@
 			path = iBox;
 			sourceTree = "<group>";
 		};
+		55A0FDDD235EB70900B78B0C /* iBox Watch */ = {
+			isa = PBXGroup;
+			children = (
+				55A0FDDE235EB70A00B78B0C /* Interface.storyboard */,
+				55A0FDE1235EB70D00B78B0C /* Assets.xcassets */,
+				55A0FDE3235EB70D00B78B0C /* Info.plist */,
+			);
+			path = "iBox Watch";
+			sourceTree = "<group>";
+		};
+		55A0FDEC235EB70E00B78B0C /* iBox Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				55A0FDED235EB70E00B78B0C /* InterfaceController.swift */,
+				55A0FDEF235EB70E00B78B0C /* ExtensionDelegate.swift */,
+				55A0FDF1235EB70E00B78B0C /* NotificationController.swift */,
+				55A0FDF3235EB70E00B78B0C /* ComplicationController.swift */,
+				55A0FDF5235EB70E00B78B0C /* Assets.xcassets */,
+				55A0FDF7235EB70E00B78B0C /* Info.plist */,
+				55A0FDF8235EB70E00B78B0C /* PushNotificationPayload.apns */,
+			);
+			path = "iBox Watch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,15 +217,51 @@
 				5579699722E3A45E00CD4EC4 /* Sources */,
 				5579699822E3A45E00CD4EC4 /* Frameworks */,
 				5579699922E3A45E00CD4EC4 /* Resources */,
+				55A0FDFC235EB70F00B78B0C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55A0FDFA235EB70F00B78B0C /* PBXTargetDependency */,
 			);
 			name = iBox;
 			productName = iBox;
 			productReference = 5579699B22E3A45E00CD4EC4 /* iBox.app */;
 			productType = "com.apple.product-type.application";
+		};
+		55A0FDDB235EB70900B78B0C /* iBox Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A0FE03235EB70F00B78B0C /* Build configuration list for PBXNativeTarget "iBox Watch" */;
+			buildPhases = (
+				55A0FDDA235EB70900B78B0C /* Resources */,
+				55A0FDFF235EB70F00B78B0C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55A0FDEB235EB70E00B78B0C /* PBXTargetDependency */,
+			);
+			name = "iBox Watch";
+			productName = "iBox Watch";
+			productReference = 55A0FDDC235EB70900B78B0C /* iBox Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		55A0FDE7235EB70E00B78B0C /* iBox Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A0FE02235EB70F00B78B0C /* Build configuration list for PBXNativeTarget "iBox Watch Extension" */;
+			buildPhases = (
+				55A0FDE4235EB70E00B78B0C /* Sources */,
+				55A0FDE5235EB70E00B78B0C /* Frameworks */,
+				55A0FDE6235EB70E00B78B0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iBox Watch Extension";
+			productName = "iBox Watch Extension";
+			productReference = 55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -135,12 +269,18 @@
 		5579699322E3A45E00CD4EC4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = MocaMatrol;
 				TargetAttributes = {
 					5579699A22E3A45E00CD4EC4 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					55A0FDDB235EB70900B78B0C = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					55A0FDE7235EB70E00B78B0C = {
+						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
@@ -158,6 +298,8 @@
 			projectRoot = "";
 			targets = (
 				5579699A22E3A45E00CD4EC4 /* iBox */,
+				55A0FDDB235EB70900B78B0C /* iBox Watch */,
+				55A0FDE7235EB70E00B78B0C /* iBox Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +325,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55A0FDDA235EB70900B78B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A0FDE2235EB70D00B78B0C /* Assets.xcassets in Resources */,
+				55A0FDE0235EB70A00B78B0C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A0FDE6235EB70E00B78B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A0FDF6235EB70E00B78B0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -200,7 +359,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55A0FDE4235EB70E00B78B0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A0FDF2235EB70E00B78B0C /* NotificationController.swift in Sources */,
+				55A0FDF4235EB70E00B78B0C /* ComplicationController.swift in Sources */,
+				55A0FDF0235EB70E00B78B0C /* ExtensionDelegate.swift in Sources */,
+				55A0FDEE235EB70E00B78B0C /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55A0FDEB235EB70E00B78B0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55A0FDE7235EB70E00B78B0C /* iBox Watch Extension */;
+			targetProxy = 55A0FDEA235EB70E00B78B0C /* PBXContainerItemProxy */;
+		};
+		55A0FDFA235EB70F00B78B0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55A0FDDB235EB70900B78B0C /* iBox Watch */;
+			targetProxy = 55A0FDF9235EB70F00B78B0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		557969A222E3A45E00CD4EC4 /* Main.storyboard */ = {
@@ -217,6 +400,14 @@
 				557969A822E3A46000CD4EC4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		55A0FDDE235EB70A00B78B0C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55A0FDDF235EB70A00B78B0C /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -376,6 +567,88 @@
 			};
 			name = Release;
 		};
+		55A0FDFD235EB70F00B78B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U2E2NDVS3;
+				IBSC_MODULE = iBox_Watch_Extension;
+				INFOPLIST_FILE = "iBox Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		55A0FDFE235EB70F00B78B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U2E2NDVS3;
+				IBSC_MODULE = iBox_Watch_Extension;
+				INFOPLIST_FILE = "iBox Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		55A0FE00235EB70F00B78B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U2E2NDVS3;
+				INFOPLIST_FILE = "iBox Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		55A0FE01235EB70F00B78B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U2E2NDVS3;
+				INFOPLIST_FILE = "iBox Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -393,6 +666,24 @@
 			buildConfigurations = (
 				557969AE22E3A46000CD4EC4 /* Debug */,
 				557969AF22E3A46000CD4EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A0FE02235EB70F00B78B0C /* Build configuration list for PBXNativeTarget "iBox Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55A0FE00235EB70F00B78B0C /* Debug */,
+				55A0FE01235EB70F00B78B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A0FE03235EB70F00B78B0C /* Build configuration list for PBXNativeTarget "iBox Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55A0FDFD235EB70F00B78B0C /* Debug */,
+				55A0FDFE235EB70F00B78B0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

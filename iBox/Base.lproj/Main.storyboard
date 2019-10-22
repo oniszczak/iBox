@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello our names are Juliet, Emilia and Aleks." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aTE-Yj-Ht5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello our names are Juliet, Emilia and Aleks" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aTE-Yj-Ht5">
                                 <rect key="frame" x="20" y="102" width="374" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

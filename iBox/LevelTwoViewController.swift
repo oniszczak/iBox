@@ -87,6 +87,7 @@ class LevelTwoViewController: UIViewController, UITextFieldDelegate {
         // Go to Next Level
         if theButton.titleLabel!.text != "Done" {
             performSegue(withIdentifier: "goToLevel3TitlePage", sender: nil)
+            return
         }
         // Stay in the game and play sound
         else {
