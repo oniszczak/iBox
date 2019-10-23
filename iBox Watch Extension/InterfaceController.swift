@@ -18,6 +18,7 @@ class InterfaceController: WKInterfaceController {
     
     var number = Int.random(in: 1 ..< 10)
     var guessedNumber: Int = 0
+    var newGame = false
     
     var itemList: [(String, String)] = [
     ("Item 1", "1"),
@@ -61,26 +62,34 @@ class InterfaceController: WKInterfaceController {
 
     @IBAction func guessButtonTapped() {
         
-        pickLable.setText("Thinking.")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.pickLable.setText("Thinking..")
+        if newGame == true {
+            newGame = false
+            self.pickLable.setText("Pick 1 - 10")
+            guessButton.setTitle("GUESS")
+        }
+        else {
+            pickLable.setText("Thinking.")
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.pickLable.setText("Thinking...")
+                self.pickLable.setText("Thinking..")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    
-                    //print (pickerItem.title)
-                    if self.number == self.guessedNumber {
-                        self.pickLable.setText("Correct!")
-                        self.guessButton.setTitle("NEW GAME")
-                        self.number = Int.random(in: 1 ..< 10)
-                        print ("The new secret number is \(self.number)")
-                    }
-                    else if self.number < self.guessedNumber {
-                        self.pickLable.setText("Lower!")
-                    }
-                    else if self.number > self.guessedNumber {
-                        self.pickLable.setText("Higher!")
+                    self.pickLable.setText("Thinking...")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        
+                        //print (pickerItem.title)
+                        if self.number == self.guessedNumber {
+                            self.pickLable.setText("Correct!")
+                            self.guessButton.setTitle("NEW GAME")
+                            self.number = Int.random(in: 1 ..< 10)
+                            print ("The new secret number is \(self.number)")
+                            self.newGame = true
+                        }
+                        else if self.number < self.guessedNumber {
+                            self.pickLable.setText("Lower!")
+                        }
+                        else if self.number > self.guessedNumber {
+                            self.pickLable.setText("Higher!")
+                        }
                     }
                 }
             }
