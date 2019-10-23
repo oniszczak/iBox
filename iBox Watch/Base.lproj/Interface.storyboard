@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch42"/>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -12,11 +12,28 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="iBox_Watch" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Guess" id="Nwj-kG-u89"/>
+                        <label width="136" height="21" alignment="left" text="Pick from 1 - 10" textAlignment="left" id="ue8-Cn-ikK">
+                            <variation key="device=watch42mm" width="136"/>
+                        </label>
+                        <picker height="100" alignment="left" focusStyle="sequence" id="uaj-se-6bE">
+                            <connections>
+                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="erg-43-mca"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="GUESS" id="Nwj-kG-u89">
+                            <connections>
+                                <action selector="guessButtonTapped" destination="AgC-eL-Hgc" id="ape-rD-SS3"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="guessButton" destination="Nwj-kG-u89" id="8ez-bc-7qM"/>
+                        <outlet property="pickLable" destination="ue8-Cn-ikK" id="0q3-SQ-K3A"/>
+                        <outlet property="picker" destination="uaj-se-6bE" id="Net-I3-oo2"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219.69230769230771" y="343.92307692307696"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
