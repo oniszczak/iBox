@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iBoxTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the number I'm thinking of. It's in the range of 1 to 10." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvc-Fo-wLt">
+                                <rect key="frame" x="90" y="130" width="1740" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWW-bs-l9m">
+                                <rect key="frame" x="90" y="591" width="1740" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="GUESS"/>
+                                <connections>
+                                    <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="tuB-BK-don"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NGT-fT-12W">
+                                <rect key="frame" x="90" y="276" width="1740" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="One"/>
+                                    <segment title="Two"/>
+                                    <segment title="Three"/>
+                                    <segment title="Four"/>
+                                    <segment title="Five"/>
+                                    <segment title="Six"/>
+                                    <segment title="Seven"/>
+                                    <segment title="Eight"/>
+                                    <segment title="Nine"/>
+                                    <segment title="Ten"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tbW-LN-WsP"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-64-XyW">
+                                <rect key="frame" x="90" y="445" width="1740" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYO-8l-AsJ">
+                                <rect key="frame" x="90" y="934" width="153" height="86"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Pink"/>
+                                <connections>
+                                    <action selector="pinkPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="KPH-Hx-Gf9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fp-co-W9c">
+                                <rect key="frame" x="869" y="934" width="182" height="86"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="greenPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="T7M-aM-dV7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZG-qa-bha">
+                                <rect key="frame" x="1625" y="934" width="205" height="86"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Orange"/>
+                                <connections>
+                                    <action selector="orangePressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="YzD-nM-6Ur"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CBh-64-XyW" firstAttribute="top" secondItem="NGT-fT-12W" secondAttribute="bottom" constant="100" id="0tw-lc-tOC"/>
+                            <constraint firstItem="3fp-co-W9c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1qh-bD-sPK"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="NGT-fT-12W" secondAttribute="trailing" id="3zg-92-mFS"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="2ZG-qa-bha" secondAttribute="trailing" id="Ni4-Zg-mjT"/>
+                            <constraint firstItem="Cvc-Fo-wLt" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="O4U-wI-HCq"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="Cvc-Fo-wLt" secondAttribute="trailing" id="PxY-Dp-fxn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MYO-8l-AsJ" secondAttribute="bottom" id="VCf-gT-hTe"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="CBh-64-XyW" secondAttribute="trailing" id="XDa-ds-Q1c"/>
+                            <constraint firstItem="NGT-fT-12W" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="Z4m-vZ-3lV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2ZG-qa-bha" secondAttribute="bottom" id="bWt-bH-gVC"/>
+                            <constraint firstItem="MYO-8l-AsJ" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="cnv-rS-Gm4"/>
+                            <constraint firstItem="CBh-64-XyW" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="gat-Z0-j7h"/>
+                            <constraint firstItem="jWW-bs-l9m" firstAttribute="top" secondItem="CBh-64-XyW" secondAttribute="bottom" constant="100" id="haY-Jv-v4M"/>
+                            <constraint firstItem="NGT-fT-12W" firstAttribute="top" secondItem="Cvc-Fo-wLt" secondAttribute="bottom" constant="100" id="kdh-ir-Je4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3fp-co-W9c" secondAttribute="bottom" id="rwh-E4-4c0"/>
+                            <constraint firstItem="Cvc-Fo-wLt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="rwq-Ok-HwO"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="jWW-bs-l9m" secondAttribute="trailing" id="sA6-49-sjk"/>
+                            <constraint firstItem="jWW-bs-l9m" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="ydV-wt-Lyx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerBox" destination="CBh-64-XyW" id="p3N-XA-Hun"/>
+                        <outlet property="pickLabel" destination="Cvc-Fo-wLt" id="G7G-RW-Ja7"/>
+                        <outlet property="segmentedNumbers" destination="NGT-fT-12W" id="9T9-4f-fon"/>
+                        <outlet property="theButton" destination="jWW-bs-l9m" id="Nzv-Ba-Qmv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="64"/>
+        </scene>
+    </scenes>
+</document>
