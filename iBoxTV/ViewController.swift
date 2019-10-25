@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var pickLabel: UILabel!
     
     var bombSoundEffect: AVAudioPlayer?
-    let number = Int.random(in: 1 ..< 10)
+    var number = Int.random(in: 1 ..< 10)
     var guessedNumber = 1
+    var newGame = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,84 +71,95 @@ class ViewController: UIViewController {
     }
     
     @IBAction func guessPressed(_ sender: Any) {
-        if number == guessedNumber {
-            print ("YES!")
-            answerBox.text = "YES!"
-            
-            let utterance = AVSpeechUtterance(string: "You win! Good for you. You should play again.")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-            utterance.rate = 0.1
-
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(utterance)
-            
-            // Flash Screen Green
-            if let wnd = self.view{
-                
-                var v = UIView(frame: wnd.bounds)
-                v.backgroundColor = UIColor.systemGreen
-                v.alpha = 1
-                
-                wnd.addSubview(v)
-                UIView.animate(withDuration: 2, animations: {
-                    v.alpha = 0.0
-                }, completion: {(finished:Bool) in
-                    
-                    v.removeFromSuperview()
-                })
-            }
-            
-            let seconds = 4.0
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                // Put your code which should be executed with a delay here
-            }
-            
-            theButton.setTitle("Play Again!", for: .normal)
-        }
-        // Wrong Guess
-        else {
-            print ("Nope!")
-            answerBox.text = "Nope! It's not " + String (guessedNumber)
-            //questionBox.text = ""
-            
-            if guessedNumber < number {
-                answerBox.text = answerBox.text! + ". Try a HIGHER number."
-                let utterance = AVSpeechUtterance(string: answerBox.text!)
-                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-                utterance.rate = 0.1
-
-                let synthesizer = AVSpeechSynthesizer()
-                synthesizer.speak(utterance)
-            }
-            else {
-                answerBox.text = answerBox.text! + ". Try a LOWER number."
-                let utterance = AVSpeechUtterance(string: answerBox.text!)
-                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-                utterance.rate = 0.1
-
-                let synthesizer = AVSpeechSynthesizer()
-                synthesizer.speak(utterance)
-            }
-            
-            // Flash Screen Red
-            if let wnd = self.view{
-                
-                var v = UIView(frame: wnd.bounds)
-                v.backgroundColor = UIColor.red
-                v.alpha = 1
-                
-                wnd.addSubview(v)
-                UIView.animate(withDuration: 1, animations: {
-                    v.alpha = 0.0
-                }, completion: {(finished:Bool) in
-                    
-                    v.removeFromSuperview()
-                })
-            }
-        }
         
+        if newGame == true {
+            newGame = false
+            //self.pickLabel.setText("Pick 1 - 10")
+            theButton.setTitle("GUESS", for: .normal)
+            self.view.backgroundColor = UIColor.systemGray
+        }
+        else {
+            if number == guessedNumber {
+                print ("YES!")
+                answerBox.text = "YES!"
+                self.number = Int.random(in: 1 ..< 10)
+                print ("The new secret number is \(self.number)")
+                self.newGame = true
+                
+                let utterance = AVSpeechUtterance(string: "You win! Good for you. You should play again.")
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                utterance.rate = 0.1
+
+                let synthesizer = AVSpeechSynthesizer()
+                synthesizer.speak(utterance)
+                
+                // Flash Screen Green
+                if let wnd = self.view{
+                    
+                    var v = UIView(frame: wnd.bounds)
+                    v.backgroundColor = UIColor.systemGreen
+                    v.alpha = 1
+                    
+                    wnd.addSubview(v)
+                    UIView.animate(withDuration: 2, animations: {
+                        v.alpha = 0.0
+                    }, completion: {(finished:Bool) in
+                        
+                        v.removeFromSuperview()
+                    })
+                }
+                
+                let seconds = 4.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    // Put your code which should be executed with a delay here
+                }
+                
+                theButton.setTitle("Play Again!", for: .normal)
+            }
+            // Wrong Guess
+            else {
+                print ("Nope!")
+                answerBox.text = "Nope! It's not " + String (guessedNumber)
+                //questionBox.text = ""
+                
+                if guessedNumber < number {
+                    answerBox.text = answerBox.text! + ". Try a HIGHER number."
+                    let utterance = AVSpeechUtterance(string: answerBox.text!)
+                    utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                    utterance.rate = 0.1
+
+                    let synthesizer = AVSpeechSynthesizer()
+                    synthesizer.speak(utterance)
+                }
+                else {
+                    answerBox.text = answerBox.text! + ". Try a LOWER number."
+                    let utterance = AVSpeechUtterance(string: answerBox.text!)
+                    utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                    utterance.rate = 0.1
+
+                    let synthesizer = AVSpeechSynthesizer()
+                    synthesizer.speak(utterance)
+                }
+                
+                // Flash Screen Red
+                if let wnd = self.view{
+                    
+                    var v = UIView(frame: wnd.bounds)
+                    v.backgroundColor = UIColor.red
+                    v.alpha = 1
+                    
+                    wnd.addSubview(v)
+                    UIView.animate(withDuration: 1, animations: {
+                        v.alpha = 0.0
+                    }, completion: {(finished:Bool) in
+                        
+                        v.removeFromSuperview()
+                    })
+                }
+            }
+            
+        }
     }
-    
     
 }
 
