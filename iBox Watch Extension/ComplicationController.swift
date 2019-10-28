@@ -50,7 +50,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        
+        if  complication . family  ==  . utilitarianSmall  {
+            let  template  =  CLKComplicationTemplateUtilitarianSmallRingText ()
+            template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
+            template . fillFraction  =  self . randomNumber
+            handler ( template )
+        } else if  complication . family  ==  . modularSmall  {
+            let  template  =  CLKComplicationTemplateUtilitarianSmallRingText ()
+            template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
+            template . fillFraction  =  self . randomNumber
+            handler ( template )
+        }  else  {
+            handler ( nil )
+        }
+        
+    }
+    
+    var randomNumber : Float {
+        return Float.random(in: 1 ..< 10)
     }
     
 }
