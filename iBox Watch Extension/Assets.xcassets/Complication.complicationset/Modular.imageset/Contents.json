@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "52.png",
+      "filename" : "52-2.png",
       "screen-width" : "<=145",
       "scale" : "2x"
     },
@@ -14,7 +14,7 @@
     },
     {
       "idiom" : "watch",
-      "filename" : "58-2.png",
+      "filename" : "58-1.png",
       "screen-width" : ">145",
       "scale" : "2x"
     },
