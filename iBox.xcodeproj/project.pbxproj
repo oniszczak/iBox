@@ -113,6 +113,7 @@
 		55A0FDF5235EB70E00B78B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55A0FDF7235EB70E00B78B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A0FDF8235EB70E00B78B0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		55AE3CA12362BF13004E36A3 /* iBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBox.entitlements; sourceTree = "<group>"; };
 		55BBEEFF2325679200CDDE1A /* LevelOneTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTitlePageViewController.swift; sourceTree = "<group>"; };
 		55BBEF012325681500CDDE1A /* LevelTwoTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoTitlePageViewController.swift; sourceTree = "<group>"; };
 		55BBEF03232568D800CDDE1A /* LevelThreeTitlePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeTitlePageViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		5579699D22E3A45E00CD4EC4 /* iBox */ = {
 			isa = PBXGroup;
 			children = (
+				55AE3CA12362BF13004E36A3 /* iBox.entitlements */,
 				5579699E22E3A45E00CD4EC4 /* AppDelegate.swift */,
 				557969A222E3A45E00CD4EC4 /* Main.storyboard */,
 				55BBEEFF2325679200CDDE1A /* LevelOneTitlePageViewController.swift */,
@@ -506,7 +508,7 @@
 		5536BA3D2362931F0036D4CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBoxTV/Info.plist;
@@ -526,7 +528,7 @@
 		5536BA3E2362931F0036D4CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBoxTV/Info.plist;
@@ -663,6 +665,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iBox/iBox.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBox/Info.plist;
@@ -673,6 +677,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -682,6 +687,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iBox/iBox.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBox/Info.plist;
@@ -692,6 +699,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vividpicture.iBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
