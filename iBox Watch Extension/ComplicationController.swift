@@ -15,6 +15,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
         handler([.forward, .backward])
+        // handler ([])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
@@ -33,6 +34,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
+        
+//       switch  complication . family  {
+//
+//       case  . modularSmall :
+//           let  template  =  CLKComplicationTemplateModularSmallRingText ()
+//           template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
+//           template . fillFraction  =  self . randomNumber
+//           handler ( CLKComplicationTimelineEntry ( date :  Date (),  complicationTemplate :  template ))
+//
+//       case  . utilitarianSmall :
+//           let  template  =  CLKComplicationTemplateUtilitarianSmallRingText ()
+//           template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
+//           template . fillFraction  =  self .randomNumber
+//           handler ( CLKComplicationTimelineEntry ( date :  Date (),  complicationTemplate :  template ))
+//
+//       default :
+//           handler ( nil )
+//       }
+        
         handler(nil)
     }
     
@@ -56,19 +76,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
             template . fillFraction  =  self . randomNumber
             handler ( template )
-        } else if  complication . family  ==  . modularSmall  {
-            let  template  =  CLKComplicationTemplateUtilitarianSmallRingText ()
-            template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
-            template . fillFraction  =  self . randomNumber
-            handler ( template )
+//        } else if  complication . family  ==  . modularSmall  {
+//            let  template  =  CLKComplicationTemplateUtilitarianSmallRingText ()
+//            template . textProvider  =  CLKSimpleTextProvider ( text :  String(Int.random(in: 1 ..< 10)) )
+//            template . fillFraction  =  self . randomNumber
+//            handler ( template )
         }  else  {
             handler ( nil )
         }
         
     }
     
+    // MARK: - Update Scheduling
+
+//    func  getNextRequestedUpdateDate ( handler :  @ escaping  ( Date ?)  ->  void )  {
+//        handler ( Date ( timeIntervalSinceNow :  TimeInterval ( 10 * 60 )))
+//    }
+    
+    
     var randomNumber : Float {
-        return Float.random(in: 1 ..< 10)
+        //return Float.random(in: 1 ..< 10)
+        return Float(4)
     }
     
 }

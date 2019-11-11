@@ -65,10 +65,11 @@ class InterfaceController: WKInterfaceController {
             newGame = false
             self.pickLable.setText("Pick 1 - 10")
             guessButton.setTitle("GUESS")
+            WKInterfaceDevice.current().play(.start)
         }
         else {
             pickLable.setText("Thinking.")
-            
+            WKInterfaceDevice.current().play(.click)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.pickLable.setText("Thinking..")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -78,6 +79,7 @@ class InterfaceController: WKInterfaceController {
                         //print (pickerItem.title)
                         if self.number == self.guessedNumber {
                             self.pickLable.setText("Correct!")
+                            WKInterfaceDevice.current().play(.success)
                             self.guessButton.setTitle("NEW GAME")
                             self.number = Int.random(in: 1 ..< 10)
                             print ("The new secret number is \(self.number)")
@@ -85,9 +87,11 @@ class InterfaceController: WKInterfaceController {
                         }
                         else if self.number < self.guessedNumber {
                             self.pickLable.setText("Lower!")
+                            WKInterfaceDevice.current().play(.directionDown)
                         }
                         else if self.number > self.guessedNumber {
                             self.pickLable.setText("Higher!")
+                            WKInterfaceDevice.current().play(.directionUp)
                         }
                     }
                 }
@@ -96,6 +100,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func pickerChanged(_ value: Int) {
+        WKInterfaceDevice.current().play(.click)
         guessButton.setTitle("GUESS " + itemList[value].1)
         guessedNumber = Int(itemList[value].1)!
     }
