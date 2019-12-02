@@ -22,4 +22,16 @@ class LevelOneTitlePageViewController: UIViewController {
         
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//    super.viewDidAppear(animated)
+//
+//        let seconds = 1.5
+//        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+//
+//            self.performSegue(withIdentifier: "goToLevel1", sender: nil)
+//            print ("RAN")
+//        }
+//
+//    }
+    
 }
