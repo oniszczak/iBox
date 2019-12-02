@@ -46,6 +46,8 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         
         print ("The secret number is: \(number)")
         //print (number)
+        print ("As emoji:")
+//        print ()
         
         self.questionBox.delegate = self
         
@@ -86,6 +88,27 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         }
         
         var guessedNumber = Int(guessedNumberAsText)
+        
+        // Check if guess is greater than 10
+        if guessedNumber! > 10 {
+            answerBox.text = guessedNumberAsText + " is waaaaaay too high!"
+            questionBox.text = ""
+            return
+        }
+        
+        // Check if guess is greater than 10
+        if guessedNumber! == 0 {
+            answerBox.text = guessedNumberAsText + " is my hero, but not in this game!"
+            questionBox.text = ""
+            return
+        }
+        
+//        // Check if guess less than 0
+//        if guessedNumber! < 0 {
+//            answerBox.text = guessedNumberAsText + " is far too negative!"
+//            questionBox.text = ""
+//            return
+//        }
         
         // Go to Next Level
         if theButton.titleLabel!.text != "Done" {
