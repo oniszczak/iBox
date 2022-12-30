@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var guessedNumber = 1
     var newGame = false
     
+    let synthesizer = AVSpeechSynthesizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,7 +92,7 @@ class ViewController: UIViewController {
                 utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
                 utterance.rate = 0.1
 
-                let synthesizer = AVSpeechSynthesizer()
+                //let synthesizer = AVSpeechSynthesizer()
                 synthesizer.speak(utterance)
                 
                 // Flash Screen Green
@@ -128,7 +130,7 @@ class ViewController: UIViewController {
                     utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
                     utterance.rate = 0.1
 
-                    let synthesizer = AVSpeechSynthesizer()
+                    //let synthesizer = AVSpeechSynthesizer()
                     synthesizer.speak(utterance)
                 }
                 else {
@@ -137,7 +139,7 @@ class ViewController: UIViewController {
                     utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
                     utterance.rate = 0.1
 
-                    let synthesizer = AVSpeechSynthesizer()
+                    //let synthesizer = AVSpeechSynthesizer()
                     synthesizer.speak(utterance)
                 }
                 

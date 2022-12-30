@@ -20,7 +20,7 @@
 		557969A922E3A46000CD4EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557969A722E3A46000CD4EC4 /* LaunchScreen.storyboard */; };
 		55A0FDE0235EB70A00B78B0C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A0FDDE235EB70A00B78B0C /* Interface.storyboard */; };
 		55A0FDE2235EB70D00B78B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A0FDE1235EB70D00B78B0C /* Assets.xcassets */; };
-		55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55A0FDE8235EB70E00B78B0C /* iBox Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55A0FDEE235EB70E00B78B0C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDED235EB70E00B78B0C /* InterfaceController.swift */; };
 		55A0FDF0235EB70E00B78B0C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDEF235EB70E00B78B0C /* ExtensionDelegate.swift */; };
 		55A0FDF2235EB70E00B78B0C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A0FDF1235EB70E00B78B0C /* NotificationController.swift */; };
@@ -72,15 +72,15 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55A0FDFF235EB70F00B78B0C /* Embed App Extensions */ = {
+		55A0FDFF235EB70F00B78B0C /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed App Extensions */,
+				55A0FDE9235EB70E00B78B0C /* iBox Watch Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -287,7 +287,7 @@
 			buildConfigurationList = 55A0FE03235EB70F00B78B0C /* Build configuration list for PBXNativeTarget "iBox Watch" */;
 			buildPhases = (
 				55A0FDDA235EB70900B78B0C /* Resources */,
-				55A0FDFF235EB70F00B78B0C /* Embed App Extensions */,
+				55A0FDFF235EB70F00B78B0C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -323,7 +323,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = MocaMatrol;
 				TargetAttributes = {
 					5536BA2D2362931C0036D4CF = {
@@ -510,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBoxTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -530,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBoxTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -571,6 +573,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -632,6 +635,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -668,9 +672,10 @@
 				CODE_SIGN_ENTITLEMENTS = iBox/iBox.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,9 +695,10 @@
 				CODE_SIGN_ENTITLEMENTS = iBox/iBox.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = iBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,6 +717,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				IBSC_MODULE = iBox_Watch_Extension;
 				INFOPLIST_FILE = "iBox Watch/Info.plist";
@@ -720,7 +727,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -730,6 +737,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				IBSC_MODULE = iBox_Watch_Extension;
 				INFOPLIST_FILE = "iBox Watch/Info.plist";
@@ -739,7 +747,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -748,6 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = "iBox Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -761,7 +770,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -770,6 +779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6U2E2NDVS3;
 				INFOPLIST_FILE = "iBox Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,7 +793,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};

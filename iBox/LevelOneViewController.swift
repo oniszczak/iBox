@@ -24,6 +24,8 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
     
     let number = Int.random(in: 1 ..< 10)
     
+    let synthesizer = AVSpeechSynthesizer()
+    
     @IBOutlet weak var questionBox: UITextField!
     @IBOutlet weak var titleBox: UITextView!
     @IBOutlet weak var answerBox: UITextField!
@@ -139,7 +141,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
             utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
             utterance.rate = 0.1
 
-            let synthesizer = AVSpeechSynthesizer()
+            //let synthesizer = AVSpeechSynthesizer()
             synthesizer.speak(utterance)
             
             // Flash Screen Green
