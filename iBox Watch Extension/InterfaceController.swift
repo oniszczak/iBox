@@ -63,11 +63,10 @@ class InterfaceController: WKInterfaceController {
         
         if newGame == true {
             newGame = false
-            self.pickLable.setText("Pick 1 - 10")
+            self.pickLable.setText("Guess the number: 1 - 10")
             guessButton.setTitle("GUESS")
-            
             picker.setSelectedItemIndex(0)
-            
+            self.guessButton.setBackgroundColor(UIColor.darkGray)
             WKInterfaceDevice.current().play(.start)
         }
         else {
@@ -85,18 +84,23 @@ class InterfaceController: WKInterfaceController {
                             WKInterfaceDevice.current().play(.success)
                             
                             
-                            //sleep(1)
-                            //for index in 1...3 {
-                            //    self.pickLable.setText("YES")
-                            //    self.pickLable.setAlpha(0)
-                            //    sleep(1)
-                            //    self.pickLable.setAlpha(1)
-                            //    self.pickLable.setHeight(CGFloat(index))
-                            //}
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    self.guessButton.setTitle("YES!")
+                                    self.guessButton.setBackgroundColor(UIColor.red)
+                                    self.pickLable.setAlpha(0)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        self.pickLable.setAlpha(1)
+                                        self.guessButton.setBackgroundColor(UIColor.blue)
+                                    self.guessButton.setTitle("You Guessed It!")
+                                }
+                            }
+    
+                            
+                            //self.guessButton.setTitle("You Guessed It!")
                             
                             
                             
-                            self.guessButton.setTitle("You Guessed It!")
+                            
                             self.number = Int.random(in: 1 ..< 10)
                             print ("The new secret number is \(self.number)")
                             self.newGame = true
