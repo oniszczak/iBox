@@ -65,6 +65,9 @@ class InterfaceController: WKInterfaceController {
             newGame = false
             self.pickLable.setText("Pick 1 - 10")
             guessButton.setTitle("GUESS")
+            
+            picker.setSelectedItemIndex(0)
+            
             WKInterfaceDevice.current().play(.start)
         }
         else {
@@ -80,7 +83,20 @@ class InterfaceController: WKInterfaceController {
                         if self.number == self.guessedNumber {
                             self.pickLable.setText("Correct!")
                             WKInterfaceDevice.current().play(.success)
-                            self.guessButton.setTitle("NEW GAME")
+                            
+                            
+                            //sleep(1)
+                            //for index in 1...3 {
+                            //    self.pickLable.setText("YES")
+                            //    self.pickLable.setAlpha(0)
+                            //    sleep(1)
+                            //    self.pickLable.setAlpha(1)
+                            //    self.pickLable.setHeight(CGFloat(index))
+                            //}
+                            
+                            
+                            
+                            self.guessButton.setTitle("You Guessed It!")
                             self.number = Int.random(in: 1 ..< 10)
                             print ("The new secret number is \(self.number)")
                             self.newGame = true
@@ -104,5 +120,8 @@ class InterfaceController: WKInterfaceController {
         guessButton.setTitle("GUESS " + itemList[value].1)
         guessedNumber = Int(itemList[value].1)!
     }
+    
+    
+    
     
 }
