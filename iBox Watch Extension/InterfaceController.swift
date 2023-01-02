@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
         
         if newGame == true {
             newGame = false
-            self.pickLable.setText("Guess the number: 1 - 10")
+            self.pickLable.setText("Pick from 1 - 10")
             guessButton.setTitle("GUESS")
             picker.setSelectedItemIndex(0)
             self.guessButton.setBackgroundColor(UIColor.darkGray)
@@ -83,23 +83,18 @@ class InterfaceController: WKInterfaceController {
                             self.pickLable.setText("Correct!")
                             WKInterfaceDevice.current().play(.success)
                             
-                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     self.guessButton.setTitle("YES!")
                                     self.guessButton.setBackgroundColor(UIColor.red)
-                                    self.pickLable.setAlpha(0)
+                                self.pickLable.setAlpha(0.5)
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                         self.pickLable.setAlpha(1)
                                         self.guessButton.setBackgroundColor(UIColor.blue)
-                                    self.guessButton.setTitle("You Guessed It!")
+                                        self.guessButton.setTitle("You Guessed It!")
                                 }
                             }
-    
                             
                             //self.guessButton.setTitle("You Guessed It!")
-                            
-                            
-                            
                             
                             self.number = Int.random(in: 1 ..< 10)
                             print ("The new secret number is \(self.number)")
