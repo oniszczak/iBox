@@ -27,7 +27,7 @@ class LevelThreeViewController: UIViewController, UITextFieldDelegate {
         self.questionBox.delegate = self
         
         let bar = UIToolbar()
-        let reset = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+        let reset = UIBarButtonItem(title: "Enter", style: .plain, target: self, action: #selector(handleEnter))
         bar.items = [reset]
         bar.sizeToFit()
         
@@ -35,7 +35,7 @@ class LevelThreeViewController: UIViewController, UITextFieldDelegate {
         questionBox.layer.borderColor = UIColor.systemOrange.cgColor
     }
     
-    @objc func handleDone(sender:UIButton) {
+    @objc func handleEnter(sender:UIButton) {
         //self.titleBox.resignFirstResponder()
     }
     
@@ -85,7 +85,7 @@ class LevelThreeViewController: UIViewController, UITextFieldDelegate {
         var guessedNumber = Int(guessedNumberAsText)
         
         // Go to Next Level
-        if theButton.titleLabel!.text != "Done" {
+        if theButton.titleLabel!.text != "Enter" {
             performSegue(withIdentifier: "goToLevel1TitlePage", sender: nil)
             return
         }
@@ -101,7 +101,7 @@ class LevelThreeViewController: UIViewController, UITextFieldDelegate {
         }
         
         // Correct Answer!
-        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Done" {
+        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Enter" {
             print ("YES!")
             answerBox.text = "YES!"
             

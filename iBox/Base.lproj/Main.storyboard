@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Guess the number I'm thinking" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aTE-Yj-Ht5">
-                                <rect key="frame" x="20" y="150" width="233" height="35"/>
+                                <rect key="frame" x="20" y="150" width="374" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gyx-a4-B6R"/>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1 to 10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-LU-xbU">
-                                <rect key="frame" x="100" y="108" width="73" height="34"/>
+                                <rect key="frame" x="100" y="108" width="214" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
@@ -64,19 +64,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-bO-UHZ">
-                                <rect key="frame" x="0.0" y="353" width="273" height="34"/>
+                                <rect key="frame" x="0.0" y="353" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a number from 1 - 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-z6-voV">
-                                <rect key="frame" x="0.0" y="58" width="273" height="30"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpF-6Y-CVe">
-                                <rect key="frame" x="96" y="402" width="81" height="54"/>
+                                <rect key="frame" x="167.5" y="402" width="79" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vKo-Ks-2K3"/>
                                 </connections>
@@ -179,7 +179,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-kq-gj4" userLabel="The Button">
                                 <rect key="frame" x="20" y="172" width="374" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="donePressed:" destination="j37-eP-Nv5" eventType="touchUpInside" id="Dc2-IG-tus"/>
                                     <action selector="donePressed:" destination="bNf-kn-nD8" eventType="touchUpInside" id="pep-gh-GGo"/>
@@ -282,7 +282,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XB-VO-ebQ">
                                 <rect key="frame" x="20" y="172" width="374" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="donePressed:" destination="j37-eP-Nv5" eventType="touchUpInside" id="SYm-0l-edw"/>
                                 </connections>

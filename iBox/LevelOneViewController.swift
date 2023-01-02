@@ -54,7 +54,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         self.questionBox.delegate = self
         
         let bar = UIToolbar()
-        let reset = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+        let reset = UIBarButtonItem(title: "Enter", style: .plain, target: self, action: #selector(handleEnter))
         bar.items = [reset]
         bar.sizeToFit()
         titleBox.inputAccessoryView = bar
@@ -64,7 +64,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         
     }
 
-    @objc func handleDone(sender:UIButton) {
+    @objc func handleEnter(sender:UIButton) {
         self.titleBox.resignFirstResponder()
     }
     
@@ -113,7 +113,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
 //        }
         
         // Go to Next Level
-        if theButton.titleLabel!.text != "Done" {
+        if theButton.titleLabel!.text != "Enter" {
             performSegue(withIdentifier: "goToLevel2TitlePage", sender: nil)
         }
         // Stay in the game and play sound
@@ -131,7 +131,7 @@ class LevelOneViewController: UIViewController, UITextFieldDelegate{
         }
         
         // Correct Answer!
-        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Done" {
+        if String(number) == questionBox.text  && theButton.titleLabel!.text == "Enter" {
             print ("YES!")
             answerBox.text = "YES!"
             
